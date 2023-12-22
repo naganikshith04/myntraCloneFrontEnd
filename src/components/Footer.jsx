@@ -1,16 +1,9 @@
+import React from 'react'
 
-import './App.css';
-import Header from './components/Header';
-
-function App() {
+function Footer() {
   return (
-    <>
-    <Header />
-    <main>
-        <div className="items-container">
-        </div>
-    </main>
-    <footer>
+    <div>
+        <footer>
         <div className="footer_container">
             <div className="footer_column">
                 <h3>ONLINE SHOPPING</h3>
@@ -54,8 +47,8 @@ function App() {
             © 2023 www.myntra.com. All rights reserved.
         </div>
     </footer>
-    </>    
-  );
+    </div>
+  )
 }
 
-export default App;
+export default Footer
