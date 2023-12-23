@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import Bag from './routes/Bag';
+import Home from './routes/Home';
+import {Provider} from 'react-redux'
+import myntraStore from './store';
+const router = createBrowserRouter([{
+  path: "/",
+  element: <App />,
+  children: [
+    {
+      path : '/', element:<Home />, 
+      // loader:postLoader
+    },
+    {
+      path:'/bag',
+      element: <Bag />
+    },
+  ]
+}])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={myntraStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
