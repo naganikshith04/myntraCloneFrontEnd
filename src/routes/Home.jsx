@@ -9,7 +9,7 @@ function Home() {
          <main>
         <div className="items-container">
           {items.map((item)=>(
-          <HomeItem item={item}/>
+          <HomeItem item={item} key={item.id}/>
           ))}
         </div>
     </main>
